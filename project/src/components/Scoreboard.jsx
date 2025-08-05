@@ -35,6 +35,14 @@ function Scoreboard() {
         {/* Header with team name inputs, control buttons, and reset */}
         <div className="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
+            <Button
+              type="primary"
+              icon={<MinusOutlined />}
+              onClick={() => decrementScore(1)}
+              size="middle"
+              className="bg-red-600 hover:bg-red-700 h-8 w-8 min-w-0 flex items-center justify-center"
+              disabled={team1Score === 0}
+            />
             <Input
               value={team1Name}
               onChange={(e) => setTeam1Name(e.target.value)}
@@ -43,11 +51,10 @@ function Scoreboard() {
             />
             <Button
               type="primary"
-              icon={<MinusOutlined />}
-              onClick={() => decrementScore(1)}
+              icon={<PlusOutlined />}
+              onClick={() => incrementScore(1)}
               size="middle"
-              className="bg-red-600 hover:bg-red-700 h-8 w-8 min-w-0 flex items-center justify-center"
-              disabled={team1Score === 0}
+              className="bg-green-600 hover:bg-green-700 h-8 w-8 min-w-0 flex items-center justify-center"
             />
           </div>
           <Button
@@ -62,16 +69,24 @@ function Scoreboard() {
           <div className="flex items-center gap-2">
             <Button
               type="primary"
-              icon={<PlusOutlined />}
-              onClick={() => incrementScore(2)}
+              icon={<MinusOutlined />}
+              onClick={() => decrementScore(2)}
               size="middle"
-              className="bg-green-600 hover:bg-green-700 h-8 w-8 min-w-0 flex items-center justify-center"
+              className="bg-red-600 hover:bg-red-700 h-8 w-8 min-w-0 flex items-center justify-center"
+              disabled={team2Score === 0}
             />
             <Input
               value={team2Name}
               onChange={(e) => setTeam2Name(e.target.value)}
               className="text-center text-lg font-bold max-w-xs"
               placeholder="Team 2 Name"
+            />
+            <Button
+              type="primary"
+              icon={<PlusOutlined />}
+              onClick={() => incrementScore(2)}
+              size="middle"
+              className="bg-green-600 hover:bg-green-700 h-8 w-8 min-w-0 flex items-center justify-center"
             />
           </div>
         </div>

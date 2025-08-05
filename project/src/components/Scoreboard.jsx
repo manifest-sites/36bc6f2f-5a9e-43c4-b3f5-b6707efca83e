@@ -30,7 +30,7 @@ function Scoreboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 p-4 md:p-8">
+    <div className="min-h-screen bg-black p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header with team name inputs and reset */}
         <div className="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -64,7 +64,7 @@ function Scoreboard() {
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 truncate">
               {team1Name}
             </h2>
-            <div className="text-8xl md:text-9xl font-bold text-white mb-6 leading-none">
+            <div className="text-9xl md:text-[12rem] lg:text-[16rem] font-bold text-white mb-6 leading-none">
               {team1Score}
             </div>
             <Space size="large">
@@ -91,7 +91,7 @@ function Scoreboard() {
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 truncate">
               {team2Name}
             </h2>
-            <div className="text-8xl md:text-9xl font-bold text-white mb-6 leading-none">
+            <div className="text-9xl md:text-[12rem] lg:text-[16rem] font-bold text-white mb-6 leading-none">
               {team2Score}
             </div>
             <Space size="large">
